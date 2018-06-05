@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BuyvolovKR" Class="XMLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=1-ПК;Initial Catalog=BuyvolovKR;Integrated Security=True" SettingsObjectName="Xml.Properties.Settings" SettingsPropertyName="BuyvolovKRConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.vacancies" Member="vacancies">
+    <Type Name="vacancies">
+      <Column Name="position" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="salary" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Idvacant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dateopen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dateclose" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="R_vacancies" Member="R" ThisKey="Idvacant" OtherKey="Idvacant" Type="R" IsForeignKey="true" />
+      <Association Name="R1_vacancies" Member="R1" ThisKey="Idvacant" OtherKey="Idvacant" Type="R1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.R2" Member="R2">
+    <Type Name="R2">
+      <Column Name="Idorg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Idapplicant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="R2_org" Member="org" ThisKey="Idorg" OtherKey="Idorg" Type="org" />
+      <Association Name="R2_applicant" Member="applicant" ThisKey="Idapplicant" OtherKey="idapplicant" Type="applicant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.R1" Member="R1">
+    <Type Name="R1">
+      <Column Name="Idvacant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Idorg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="R1_vacancies" Member="vacancies" ThisKey="Idvacant" OtherKey="Idvacant" Type="vacancies" />
+      <Association Name="R1_org" Member="org" ThisKey="Idorg" OtherKey="Idorg" Type="org" />
+    </Type>
+  </Table>
+  <Table Name="dbo.R" Member="R">
+    <Type Name="R">
+      <Column Name="Idvacant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Idapplicant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="R_applicant" Member="applicant" ThisKey="Idapplicant" OtherKey="idapplicant" Type="applicant" />
+      <Association Name="R_vacancies" Member="vacancies" ThisKey="Idvacant" OtherKey="Idvacant" Type="vacancies" />
+    </Type>
+  </Table>
+  <Table Name="dbo.org" Member="org">
+    <Type Name="org">
+      <Column Name="Idorg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="orgname" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="R2_org" Member="R2" ThisKey="Idorg" OtherKey="Idorg" Type="R2" IsForeignKey="true" />
+      <Association Name="R1_org" Member="R1" ThisKey="Idorg" OtherKey="Idorg" Type="R1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.applicant" Member="applicant">
+    <Type Name="applicant">
+      <Column Name="FIO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="position" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="salary" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idapplicant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Info" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="hired" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="R2_applicant" Member="R2" ThisKey="idapplicant" OtherKey="Idapplicant" Type="R2" IsForeignKey="true" />
+      <Association Name="R_applicant" Member="R" ThisKey="idapplicant" OtherKey="Idapplicant" Type="R" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

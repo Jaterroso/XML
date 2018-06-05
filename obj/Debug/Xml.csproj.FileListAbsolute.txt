@@ -1,0 +1,8 @@
+c:\users\1\source\repos\Xml\Xml\bin\Debug\Xml.exe.config
+c:\users\1\source\repos\Xml\Xml\bin\Debug\Xml.exe
+c:\users\1\source\repos\Xml\Xml\bin\Debug\Xml.pdb
+c:\users\1\source\repos\Xml\Xml\obj\Debug\Xml.csprojResolveAssemblyReference.cache
+c:\users\1\source\repos\Xml\Xml\obj\Debug\Xml.csproj.CoreCompileInputs.cache
+c:\users\1\source\repos\Xml\Xml\obj\Debug\Xml.exe
+c:\users\1\source\repos\Xml\Xml\obj\Debug\Xml.pdb
+C:\Users\1\source\repos\Xml\Xml\obj\Debug\Xml.csproj.ResolveComReference.cache
